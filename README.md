@@ -32,3 +32,5 @@ This is an AI Chat Application built using Gemini-Pro, React, Node.js, and Expre
     // Server
     npm run dev
 ```
+
+![image](https://github.com/inder231/gemini-pro-chat-bot/assets/101566674/808b6aca-1bfe-4dad-b476-a827e175a1d4)
