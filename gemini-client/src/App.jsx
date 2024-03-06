@@ -37,7 +37,7 @@ function App() {
           "Content-Type": "application/json",
         },
       };
-      const response = await fetch("http://localhost:8080/gemini", options);
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/gemini`, options);
       const result = await response.json();
 
       setChatHistory((oldHistory) => [
