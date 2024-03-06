@@ -6,7 +6,6 @@
   display: none;
 }
 
-
 body {
   margin: 0;
   padding: 0;
@@ -56,6 +55,7 @@ p {
 
 .input-container {
   width: 100%;
+  min-height: 3rem;
   border: solid 0.5 #cacaca;
   border-radius: 6px;
   box-shadow: rgba(0, 0, 82, 0.15) 0 2px 4px;
@@ -92,13 +92,27 @@ p {
 }
 
 .answer {
-  padding: 13px 14px;
+  padding: 0px 10px;
   border: solid 0.5px #cacaca;
   background-color: #fff;
+  color: #6d6c6c;
   margin: 5px;
   font-size: 15px;
   font-weight: 200;
   border-radius: 6px;
+}
+
+.user-question, .model-answer {
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+}
+
+.user-question {
+  background-color: #f1d2dc;
+}
+
+.model-answer {
+  background-color: #ccffe6;
 }
 
 .loading {

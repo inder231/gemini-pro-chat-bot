@@ -1,5 +1,6 @@
 import React from "react";
 import Loader from "./components/Loader";
+import Markdown from "react-markdown";
 
 function App() {
   const [searchValue, setSearchValue] = React.useState("");
@@ -89,7 +90,9 @@ function App() {
         {chatHistory?.map((chatItem, _index) => (
           <div key={_index}>
             <p className="answer">
-              {chatItem.role} : {chatItem.parts}
+              <p className={chatItem.role === "user" ? "user-question" : "model-answer"}>
+                <b><i>{chatItem.role}</i></b> :<Markdown>{chatItem.parts}</Markdown>
+              </p>
             </p>
           </div>
         ))}
