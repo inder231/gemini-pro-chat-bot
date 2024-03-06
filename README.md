@@ -24,7 +24,18 @@ This is an AI Chat Application built using Gemini-Pro, React, Node.js, and Expre
    npm install
    ```
 
-4. Run the application in development mode
+4. Create .env files in both client and server folders
+5. Add in server env file
+   ```bash
+      GEMINI_GEN_AI_KEY = 
+      PORT = 
+      CLIENT_URL = 
+   ```
+6. Add in client env file
+   ```bash
+      VITE_API_URL = 
+   ```
+8. Run the application in development mode
    ```bash
     // Client
     npm run dev
