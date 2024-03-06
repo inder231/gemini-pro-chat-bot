@@ -4,19 +4,19 @@ require("dotenv").config();
 const { rateLimit } = require("express-rate-limit");
 const PORT = process.env.PORT || 8080;
 
-// Trust the proxy
-app.set('trust proxy', true);
 
 const limiter = rateLimit({
   windowMs: 1 * 60 * 1000, // 1 minutes
-  limit: 5, // Limit each IP to 5 requests per `window` (here, per 15 minutes).
-  standardHeaders: "draft-7", // draft-6: `RateLimit-*` headers; draft-7: combined `RateLimit` header
-  legacyHeaders: false, // Disable the `X-RateLimit-*` headers.
+  max: 5, // Limit each IP to 5 requests per 15 minutes
   message: {
     message: "You have exceeded the per minute request limit (5req/min)",
   },
-  // store: ... , // Redis, Memcached, etc. See below.
+  keyGenerator: function (req) {
+    // Use the IP address extracted from the 'X-Forwarded-For' header as the key
+    return getIpFromHeader(req.headers["x-forwarded-for"]) || req.ip;
+  },
 });
+
 
 const app = express();
 
