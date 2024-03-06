@@ -4,6 +4,9 @@ require("dotenv").config();
 const { rateLimit } = require("express-rate-limit");
 const PORT = process.env.PORT || 8080;
 
+// Trust the proxy
+app.set('trust proxy', true);
+
 const limiter = rateLimit({
   windowMs: 1 * 60 * 1000, // 1 minutes
   limit: 5, // Limit each IP to 5 requests per `window` (here, per 15 minutes).
