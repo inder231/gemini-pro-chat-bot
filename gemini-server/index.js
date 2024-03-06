@@ -1,7 +1,9 @@
+"use strict";
 const express = require("express");
 const cors = require("cors");
 require("dotenv").config();
 const { rateLimit } = require("express-rate-limit");
+const { getIpFromHeader } = require("./utils/getIpFromHeader");
 const PORT = process.env.PORT || 8080;
 
 
